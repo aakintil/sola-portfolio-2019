@@ -53,15 +53,16 @@ h3 {
     letter-spacing: -0.05vw;
 }
 
-.section-title, 
+.section-title,
 .section-overview-content {
-    line-height: 50px; 
+    line-height: 50px;
 }
+
 .section-title {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
-    margin-right: 100px; 
+    margin-right: 100px;
 }
 
 .section-overview-content {
@@ -73,9 +74,17 @@ h3 {
 /* sections */
 .section {
     padding-left: 6vw;
-    padding-right: 6vw; 
+    padding-right: 6vw;
     display: flex;
     align-items: center;
+}
+
+.section-overview,
+.section-projects, 
+.section-experience, 
+.section-contact {
+    align-items: flex-start;
+    height: 400px;
 }
 
 /* header section */
@@ -88,9 +97,33 @@ h3 {
     height: 800px;
 }
 
+/* overview section */
 .section-overview {
     padding-left: 6vw;
     display: flex;
     align-items: flex-start;
-    height: 400px;
+}
+
+/* projects section */
+.section-projects-content {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-projects .section-title {
+    line-height: 16px;
+}
+
+.section-projects-content-link {
+    transition: all 0.75s ease;
+    font-size: 30px;
+    color: #F9F9F9;
+    text-decoration: none;
+}
+
+.section-projects-content-link:hover {
+    transition: all 0.5s ease;
+    color: rgb(240, 224, 0);
 }
