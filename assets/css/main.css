@@ -1,0 +1,96 @@
+/*! main.css */
+
+/* Fonts
+   ========================================================================== */
+
+@font-face {
+    font-family: 'EuclidSquare';
+    font-weight: 100;
+    src: url('../fonts/EuclidSquare-Light-Web/EuclidSquare-Light-WebS.eot?') format('eot'), url('../fonts/EuclidSquare-Light-Web/EuclidSquare-Light-WebS.woff') format('woff'), url('../fonts/EuclidSquare-Light-Web/EuclidSquare-Light-WebS.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'EuclidSquare';
+    font-weight: 300;
+    src: url('../fonts/EuclidSquare-Regular-Web/EuclidSquare-Regular-WebS.eot?') format('eot'), url('../fonts/EuclidSquare-Regular-Web/EuclidSquare-Regular-WebS.woff') format('woff'), url('../fonts/EuclidSquare-Regular-Web/EuclidSquare-Regular-WebS.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'EuclidSquare';
+    font-weight: 500;
+    src: url('../fonts/EuclidSquare-Medium-Web/EuclidSquare-Medium-WebS.eot?') format('eot'), url('../fonts/EuclidSquare-Medium-Web/EuclidSquare-Medium-WebS.woff') format('woff'), url('../fonts/EuclidSquare-Medium-Web/EuclidSquare-Medium-WebS.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'EuclidSquare';
+    font-weight: 700;
+    src: url('../fonts/EuclidSquare-Bold-Web/EuclidSquare-Bold-WebS.eot?') format('eot'), url('../fonts/EuclidSquare-Bold-Web/EuclidSquare-Bold-WebS.woff') format('woff'), url('../fonts/EuclidSquare-Bold-Web/EuclidSquare-Bold-WebS.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'EuclidSquare';
+    font-weight: 900;
+    src: url('../fonts/EuclidSquare-Semibold-Web/EuclidSquare-Semibold-WebS.eot?') format('eot'), url('../fonts/EuclidSquare-Semibold-Web/EuclidSquare-Semibold-WebS.woff') format('woff'), url('../fonts/EuclidSquare-Semibold-Web/EuclidSquare-Semibold-WebS.ttf') format('truetype');
+}
+
+
+body {
+    background: #0F0E0E;
+    color: #F9F9F9;
+    font-family: "EuclidSquare";
+}
+
+/* fonts */
+h1 {
+    font-size: 30vw;
+    font-weight: 300;
+    letter-spacing: -1vw;
+}
+
+h3 {
+    font-size: 4.5vw;
+    font-weight: 300;
+    letter-spacing: -0.05vw;
+}
+
+.section-title, 
+.section-overview-content {
+    line-height: 50px; 
+}
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin-right: 100px; 
+}
+
+.section-overview-content {
+    font-size: 30px;
+    font-weight: 300;
+    letter-spacing: -0.05vw;
+}
+
+/* sections */
+.section {
+    padding-left: 6vw;
+    padding-right: 6vw; 
+    display: flex;
+    align-items: center;
+}
+
+/* header section */
+.section-header {
+    height: 100vh;
+}
+
+/* intro section  */
+.section-intro {
+    height: 800px;
+}
+
+.section-overview {
+    padding-left: 6vw;
+    display: flex;
+    align-items: flex-start;
+    height: 400px;
+}
