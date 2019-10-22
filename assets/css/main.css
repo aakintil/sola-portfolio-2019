@@ -42,42 +42,101 @@ body {
 
 /* fonts */
 h1 {
-    font-size: 30vw;
+    font-size: 120px;
     font-weight: 300;
-    letter-spacing: -1vw;
+    letter-spacing: -5px;
 }
 
 h3 {
-    font-size: 4.5vw;
+    font-size: 40px;
     font-weight: 300;
-    letter-spacing: -0.05vw;
+    letter-spacing: -1px;
+    line-height: 60px; 
+    text-transform: lowercase; 
 }
+
+.section {
+    padding-left: 6vw;
+    padding-right: 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 100px; 
+}
+
+.section-header {
+    height: 100vh;
+    justify-content: center; 
+}
+
 
 .section-title,
 .section-overview-content {
     line-height: 50px;
 }
 
+
 .section-title {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
-    margin-right: 100px;
+    width: 100px; 
+    font-size: 12px; 
 }
 
-.section-overview-content {
-    font-size: 30px;
+.section-overview-content, 
+.section-experience-content-detail, 
+.section-contact-content-link {
+    font-size: 20px;
     font-weight: 300;
-    letter-spacing: -0.05vw;
+    letter-spacing: -1px;
 }
 
-/* sections */
-.section {
-    padding-left: 6vw;
-    padding-right: 6vw;
-    display: flex;
-    align-items: center;
+.section-experience-content-detail {
+    line-height: 30px; 
 }
+
+.section-experience-content-duration {
+    opacity: 0.25;
+}
+
+/* projects */
+.section-projects-content {
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-contact-content-link, 
+.section-projects-content-link {
+    color: #F9F9F9;
+    text-decoration: none;
+    transition: all 0.75s ease;
+}
+.section-projects-content-link {
+    font-size: 30px;
+}
+
+.section-contact-content-link:hover, 
+.section-projects-content-link:hover {
+    transition: all 0.5s ease;
+    color: rgb(240, 224, 0);
+}
+
+.section-experience-content-block, 
+.section-contact-content li {
+    margin-bottom: 30px; 
+}
+
+.section-experience-content-block:last-child {
+    margin: 0; 
+}
+
+
+/*
+
+
 
 .section-overview,
 .section-projects, 
@@ -87,43 +146,5 @@ h3 {
     height: 400px;
 }
 
-/* header section */
-.section-header {
-    height: 100vh;
-}
 
-/* intro section  */
-.section-intro {
-    height: 800px;
-}
-
-/* overview section */
-.section-overview {
-    padding-left: 6vw;
-    display: flex;
-    align-items: flex-start;
-}
-
-/* projects section */
-.section-projects-content {
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.section-projects .section-title {
-    line-height: 16px;
-}
-
-.section-projects-content-link {
-    transition: all 0.75s ease;
-    font-size: 30px;
-    color: #F9F9F9;
-    text-decoration: none;
-}
-
-.section-projects-content-link:hover {
-    transition: all 0.5s ease;
-    color: rgb(240, 224, 0);
-}
+*/
