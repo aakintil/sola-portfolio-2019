@@ -5,6 +5,8 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+    /*
     .section-title {
         text-transform: uppercase;
         letter-spacing: 1px;
@@ -20,7 +22,6 @@
         letter-spacing: -0.05vw;
     }
     
-    /* sections */
     .section {
         padding-left: 6vw;
         padding-right: 6vw;
@@ -36,24 +37,23 @@
         height: 400px;
     }
     
-    /* header section */
     .section-header {
         height: 100vh;
     }
     
-    /* intro section  */
+
     .section-intro {
         height: 800px;
     }
     
-    /* overview section */
+
     .section-overview {
         padding-left: 6vw;
         display: flex;
         align-items: flex-start;
     }
     
-    /* projects section */
+
     .section-projects-content {
         height: 300px;
         display: flex;
@@ -82,6 +82,7 @@
     .section-experience-content-block {
         margin-bottom: 30px; 
     }
+    */
 }
 
 /* Extra large devices (large desktops, 1200px and up) */

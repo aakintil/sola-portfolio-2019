@@ -51,8 +51,8 @@ h3 {
     font-size: 40px;
     font-weight: 300;
     letter-spacing: -1px;
-    line-height: 60px; 
-    text-transform: lowercase; 
+    line-height: 60px;
+    text-transform: lowercase;
 }
 
 .section {
@@ -61,14 +61,17 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 100px; 
+    margin-bottom: 100px;
 }
 
 .section-header {
     height: 100vh;
-    justify-content: center; 
+    justify-content: center;
 }
 
+.section-overview-content:last-child {
+    margin-top: 10px;
+}
 
 .section-title,
 .section-overview-content {
@@ -80,12 +83,12 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
-    width: 100px; 
-    font-size: 12px; 
+    width: 100px;
+    font-size: 12px;
 }
 
-.section-overview-content, 
-.section-experience-content-detail, 
+.section-overview-content,
+.section-experience-content-detail,
 .section-contact-content-link {
     font-size: 20px;
     font-weight: 300;
@@ -93,7 +96,7 @@ h3 {
 }
 
 .section-experience-content-detail {
-    line-height: 30px; 
+    line-height: 30px;
 }
 
 .section-experience-content-duration {
@@ -108,43 +111,52 @@ h3 {
     justify-content: space-between;
 }
 
-.section-contact-content-link, 
+.section-contact-content-link,
 .section-projects-content-link {
     color: #F9F9F9;
     text-decoration: none;
     transition: all 0.75s ease;
 }
+
 .section-projects-content-link {
     font-size: 30px;
 }
 
-.section-contact-content-link:hover, 
+.section-contact-content-link:hover,
 .section-projects-content-link:hover {
     transition: all 0.5s ease;
     color: rgb(240, 224, 0);
 }
 
-.section-experience-content-block, 
+.section-experience-content-block,
 .section-contact-content li {
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
 }
 
 .section-experience-content-block:last-child {
-    margin: 0; 
+    margin: 0;
 }
 
-
-/*
-
-
-
-.section-overview,
-.section-projects, 
-.section-experience, 
-.section-contact {
-    align-items: flex-start;
-    height: 400px;
+/* projects detail pages */
+.projects .section-header {
+    height: 25vh;
 }
 
+.section-gallery-image {
+    width: 70%;
+    height: auto;
+    margin-bottom: 25px;
+}
 
-*/
+.section-gallery-row {
+    margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-gallery-row .section-title {
+    /* align-self: flex-start; */
+}
