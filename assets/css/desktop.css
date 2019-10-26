@@ -3,6 +3,13 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+    h3 {
+        font-size: 40px;
+        letter-spacing: -1px;
+        line-height: 60px;
+    }
+
     .section-columns {
         flex-direction: row;
     }
@@ -23,11 +30,25 @@
     }
 
     .projects .section-gallery-image {
-        width: 60%;
+        width: 80%;
         height: auto;
         margin-bottom: 50px;
+    }
+
+    .section {
+        padding-left: 10vw;
+        padding-right: 10vw;
     }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {}
+@media (min-width: 1200px) {
+    .section {
+        padding-left: 16vw;
+        padding-right: 16vw;
+    }
+
+    .projects .section-gallery-image {
+        width: 100%;
+    }
+}

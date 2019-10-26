@@ -48,10 +48,10 @@ h1 {
 }
 
 h3 {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 300;
     letter-spacing: -1px;
-    line-height: 60px;
+    line-height: 45px;
     text-transform: lowercase;
 }
 
@@ -148,7 +148,7 @@ h3 {
 }
 
 .section-gallery-image {
-    width: 70%;
+    width: 100%;
     height: auto;
     margin-bottom: 25px;
 }
