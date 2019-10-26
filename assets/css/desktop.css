@@ -1,0 +1,33 @@
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .section-columns {
+        flex-direction: row;
+    }
+    .section-columns .section-title {
+        line-height: 16px;
+        margin-right: 100px;
+        width: 100px;
+    }
+
+    .section-overview-content:last-child {
+        margin-top: -15px;
+    }
+
+    /* project detail pages */
+    .projects .section-gallery-columns {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projects .section-gallery-image {
+        width: 60%;
+        height: auto;
+        margin-bottom: 50px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {}

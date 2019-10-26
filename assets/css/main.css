@@ -59,9 +59,14 @@ h3 {
     padding-left: 6vw;
     padding-right: 6vw;
     display: flex;
+    margin-bottom: 100px;
+}
+
+.section-columns, 
+.section-header, 
+.section-intro {
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 100px;
 }
 
 .section-header {
@@ -96,7 +101,7 @@ h3 {
 }
 
 .section-experience-content-detail {
-    line-height: 30px;
+    line-height: 25px;
 }
 
 .section-experience-content-duration {
@@ -159,4 +164,9 @@ h3 {
 
 .section-gallery-row .section-title {
     /* align-self: flex-start; */
+    text-align: center;
+}
+
+.section-projects-content-link.active {
+    color: rgb(240, 224, 0);
 }
