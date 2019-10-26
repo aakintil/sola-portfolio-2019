@@ -62,8 +62,8 @@ h3 {
     margin-bottom: 100px;
 }
 
-.section-columns, 
-.section-header, 
+.section-columns,
+.section-header,
 .section-intro {
     flex-direction: column;
     align-items: flex-start;
@@ -146,6 +146,23 @@ h3 {
 /* projects detail pages */
 .projects .section-header {
     height: 25vh;
+    align-items: flex-start;
+    position: relative;
+    justify-content: flex-start;
+}
+
+.projects .section-link-container {
+    position: fixed;
+    background: #0F0E0E;
+    width: 100%;
+    height: 15vh; 
+    display: flex;
+    align-items: center;
+}
+
+.projects .section-header a {
+    text-decoration: none;
+    color: #F9F9F9;
 }
 
 .section-gallery-image {
