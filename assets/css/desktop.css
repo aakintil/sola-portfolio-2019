@@ -3,6 +3,10 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+    h1 {
+        font-size: 300px;
+        font-weight: 500;
+    }
 
     h3 {
         font-size: 40px;
