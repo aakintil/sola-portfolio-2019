@@ -72,6 +72,7 @@ h3 {
 .section-header {
     height: 100vh;
     justify-content: center;
+    align-items: center;
 }
 
 .section-overview-content:last-child {
