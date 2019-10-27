@@ -23,10 +23,6 @@
         width: 100px;
     }
 
-    .section-overview-content:last-child {
-        margin-top: -15px;
-    }
-
     /* project detail pages */
     .projects .section-gallery-columns {
         display: flex;
