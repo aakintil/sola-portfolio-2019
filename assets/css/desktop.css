@@ -39,6 +39,10 @@
         padding-left: 10vw;
         padding-right: 10vw;
     }
+
+    .section-overview-content {
+        margin-top: -14px;
+    }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
