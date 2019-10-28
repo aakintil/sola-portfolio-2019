@@ -79,6 +79,10 @@ h3 {
     margin-top: 10px;
 }
 
+.section-overview-content:not(:first-child) {
+    margin-top: 15px;
+}
+
 .section-title,
 .section-overview-content {
     line-height: 50px;

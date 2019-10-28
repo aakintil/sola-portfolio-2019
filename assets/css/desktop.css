@@ -40,9 +40,10 @@
         padding-right: 10vw;
     }
 
-    .section-overview-content {
-        margin-top: -14px;
+    .section-overview-content:nth-child(1) {
+        margin-top: -15px;
     }
+
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
