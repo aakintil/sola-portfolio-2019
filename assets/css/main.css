@@ -122,7 +122,8 @@ h3 {
 }
 
 .section-contact-content-link,
-.section-projects-content-link {
+.section-projects-content-link, 
+.section-overview-content-link {
     color: #F9F9F9;
     text-decoration: none;
     transition: all 0.75s ease;
@@ -133,7 +134,8 @@ h3 {
 }
 
 .section-contact-content-link:hover,
-.section-projects-content-link:hover {
+.section-projects-content-link:hover, 
+.section-overview-content-link:hover {
     transition: all 0.5s ease;
     color: rgb(240, 224, 0);
 }

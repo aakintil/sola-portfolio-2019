@@ -49,8 +49,8 @@
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     .section {
-        padding-left: 16vw;
-        padding-right: 16vw;
+        padding-left: 13vw;
+        padding-right: 13vw;
     }
 
     .projects .section-gallery-image {
