@@ -102,7 +102,7 @@ h3 {
 .section-contact-content-link {
     font-size: 20px;
     font-weight: 300;
-    letter-spacing: -1px;
+    letter-spacing: -0.5px;
 }
 
 .section-experience-content-detail {
@@ -115,10 +115,12 @@ h3 {
 
 /* projects */
 .section-projects-content {
-    height: 400px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+
+.section-projects-content li:not(:last-child) {
+    margin-bottom: 50px; 
 }
 
 .section-contact-content-link,
