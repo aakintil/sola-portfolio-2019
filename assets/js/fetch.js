@@ -39,11 +39,9 @@ function fetchPage(link, page) {
 
     fetch(`${baseURL}/${page}`)
         .then((response) => {
-            console.log('base url ', baseURL)
-            return response.text;
+            return response.text();
         })
         .then((html) => {
-            console.log('base url ', baseURL)
             let doc = new DOMParser().parseFromString(html, 'text/html');
 
             // animate as soon as we call this function 
@@ -54,12 +52,14 @@ function fetchPage(link, page) {
                 duration: 700,
                 scale: [1, 0.99],
                 complete: (anim) => {
-                    document.querySelector('.sections').remove();
+                    document.querySelector('.section-header').remove();
+                    document.querySelector('.section-intro').remove();
+                    document.querySelector('.section-overview').remove();
                 }
             });
 
             setTimeout(() => {
-                document.querySelector('body').insertBefore(doc.querySelector('.section'), document.querySelector('body'));
+                document.querySelector('body').insertBefore(doc.querySelector('.new-content'), document.querySelector('.section-projects'));
 
                 anime({
                     easing: 'easeInOutQuad',

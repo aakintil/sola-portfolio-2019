@@ -164,11 +164,15 @@ h5 span {
 }
 
 /* projects detail pages */
+.projects {
+    position: relative;
+}
+
 .projects .section-header {
     height: 25vh;
     align-items: flex-start;
     position: relative;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
 }
 
 .projects .section-link-container {
