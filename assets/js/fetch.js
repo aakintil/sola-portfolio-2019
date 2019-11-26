@@ -77,3 +77,4 @@ function fetchPage(link, page) {
 }
 
 // ajax page loading fetch animations 
+// https://www.youtube.com/watch?v=G5rGLY5uF7Y
