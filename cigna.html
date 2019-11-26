@@ -11,12 +11,14 @@
     <!-- <link rel="apple-touch-icon" href="icon.png"> -->
     <!-- Place favicon.ico in the root directory -->
 
+    <!-- css files -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/desktop.css">
 
-
-
+    <!-- js files -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -32,11 +34,11 @@
         </div>
     </header>
 
-    <section class="section section-intro">
+    <section data-scroll class="section section-intro">
         <h3>cigna</h3>
     </section>
 
-    <section class="section section-overview section-columns">
+    <section data-scroll class="section section-overview section-columns">
         <div>
             <p class="section-title">
                 overview
@@ -57,8 +59,7 @@
             </p>
 
             <p class="section-overview-content">
-                <a href="https://studio.ey.com/cigna/" target="_blank" class="section-overview-content-link">Learn
-                    More</a>
+                <a href="https://studio.ey.com/cigna/" target="_blank" class="section-overview-content-learn-more-link">Learn More</a>
             </p>
 
         </div>
@@ -66,7 +67,7 @@
         </p> -->
     </section>
 
-    <section class="section section-gallery section-columns">
+    <section data-scroll class="section section-gallery section-columns">
         <div>
             <p class="section-title">product</p>
         </div>
@@ -79,7 +80,7 @@
         </div>
     </section>
 
-    <section class="section section-gallery section-columns">
+    <section data-scroll class="section section-gallery section-columns">
         <div>
             <p class="section-title">process</p>
         </div>
@@ -94,7 +95,7 @@
         </div>
     </section>
 
-    <section class="section section-projects section-columns">
+    <section data-scroll class="section section-projects section-columns">
         <p class="section-title">
             projects
         </p>
@@ -105,6 +106,8 @@
             <li><a href="siriuslabs.html" class="section-projects-content-link">SiriusLabs</a></li>
         </ul>
     </section>
+
+    <script defer src="assets/js/animation.js"></script>
 </body>
 
 </html>

@@ -19,6 +19,8 @@
     <!-- js files -->
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
     <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+    <script defer src="assets/js/animation.js"></script>
+    <script defer src="assets/js/fetch.js"></script>
     <meta name="theme-color" content="#fafafa">
 </head>
 
@@ -28,13 +30,15 @@
   <![endif]-->
 
     <!-- Add your site or application content here -->
-    <header class="section section-header">
+    <header data-scroll class="section section-header">
         <h1>aderinsola</h1>
     </header>
 
     <section data-scroll class="section section-intro">
         <h5> Ekaabọ <span>|</span> Akune <span>|</span> Bienvenue <span>|</span> Welcome. </h5>
-        <h3>Aderinsola Akintilo is a digital consultant and designer based in Lagos, Nigeria. Crafting solutions in the logistics, healthcare, and technology sectors. This simple and pleasant website is for his public work and thoughts. We hope you enjoy! </h3>
+        <h3>Aderinsola Akintilo is a digital consultant and designer based in Lagos, Nigeria. Crafting solutions in the
+            logistics, healthcare, and technology sectors. This simple and pleasant website is for his public work and
+            thoughts, enjoy. </h3>
     </section>
 
     <section class="section section-overview section-columns">
@@ -45,7 +49,8 @@
         </div>
         <div>
             <p data-scroll class="section-overview-content">
-                Over the past 6 years, Aderinsola has been priveleged to work with a broad range of clients: NASA, Nike, Fedex,
+                Over the past 6 years, Aderinsola has been priveleged to work with a broad range of clients: NASA, Nike,
+                Fedex,
                 Gokada, Cigna, PepsiCo, Palo Alto Health Sciences, and Daimler Trucks North America, to name a few.
             </p>
         </div>
@@ -56,10 +61,10 @@
             projects
         </p>
         <ul data-scroll class="section-projects-content">
-            <li><a href="cigna.html" class="section-projects-content-link">Cigna</a></li>
-            <li><a href="fedex.html" class="section-projects-content-link">Fedex</a></li>
-            <li><a href="gokada.html" class="section-projects-content-link">Gokada</a></li>
-            <li><a href="siriuslabs.html" class="section-projects-content-link">SiriusLabs</a></li>
+            <li><a href="cigna.html" id="cigna-link" class="section-projects-content-link">Cigna</a></li>
+            <li><a href="fedex.html" id="fedex-link" class="section-projects-content-link">Fedex</a></li>
+            <li><a href="gokada.html" id="gokada-link" class="section-projects-content-link">Gokada</a></li>
+            <li><a href="siriuslabs.html" id="siriuslabs-link" class="section-projects-content-link">SiriusLabs</a></li>
             <!-- <li><a href="" class="section-projects-content-link">ZeroDark</a></li> -->
             <!-- <li><a href="" class="section-projects-content-link">Honorable Mentions</a></li> -->
             <!-- helios, pepsi telematics, daimler telematics and service comm, audiopium -->
@@ -139,8 +144,5 @@
         </ul>
     </section>
 </body>
-<script defer src="assets/js/animation.js"></script>
-<script defer src="assets/js/function.js"></script>
-
 
 </html>
