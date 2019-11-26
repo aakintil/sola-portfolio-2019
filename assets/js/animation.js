@@ -44,4 +44,5 @@ ScrollOut({
     },
 });
 
+// general page animations with anime.js
 // https://www.youtube.com/watch?v=XiC5Lrh6CZY
