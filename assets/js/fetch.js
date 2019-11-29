@@ -30,64 +30,28 @@ linkArray.forEach((eachLink) => {
     });
 })
 
-function removeHomePageContainers(document) {
-    let sections = document.querySelectorAll('.section');
-    for (var i = 0; i < sections.length; i++) {
-        // have to leave the old navigation so that we don't have to reattach event listeners
-        sections[i].remove();
-    }
-}
-
-function scrollOutCall() {
-    console.log("6. starting to attach scroll out function")
-    ScrollOut({
-        onShown: function (el) {
-            // use the web animation API
-            console.log("on shown ");
-            anime({
-                easing: 'easeInOutQuad',
-                targets: el, // ".cigna.section.section-overview.section-columns",
-                opacity: [0, 1],
-                duration: 1200,
-                scale: [0.99, 1]
-            });
-        },
-        onHidden: function (el) {
-            // hide the element initially
-            console.log("on hide ");
-            anime({
-                easing: 'easeInOutQuad',
-                targets: el, //".cigna.section.section-overview.section-columns",
-                opacity: [1, 0],
-                duration: 1200,
-                scale: [1, 0.99]
-            });
-        },
-    });
-}
-
 function addProjectPageContainers(document, doc) {
-    // hide the body 
-    // anime({
-    //     targets: 'body',
-    //     opacity: [1, 0]
-    // })
     // need to scroll to the top
-    console.log('1. scroll to top')
     window.scrollTo({
-        top: 0,
+        top: '-100',
         behavior: 'smooth'
     });
 
+    // hide the body so users don't see lag and what not
+    anime({
+        targets: 'body',
+        opacity: [1, 0]
+    })
+
+
     // replace the content with new content
-    console.log('2. attaching elements to dom')
+    // attaching elements to the dom
     let projectSections = doc.querySelectorAll('.section');
     for (var i = 0; i < projectSections.length; i++) {
         document.querySelector('body').appendChild(projectSections[i]);
     }
 
-    // animate the replacement
-    console.log('3. animating dom elements to 0')
+    // animate the new content from opaque to invisible
     anime({
         easing: 'easeInOutQuad',
         targets: '.section',
@@ -96,59 +60,67 @@ function addProjectPageContainers(document, doc) {
         scale: [1, 0.99]
     });
 
+    // attach scrollout events to the new content
+    scrollOutCall();
+
+    // attach event listeners to the new content project navigation
+    reattachEventListeners(document);
+
+    // after all that is done, animate the body back to visible, and animate the rest of the page
     setTimeout(() => {
         console.log("4. calling set timeout and animating elements to 1 \n")
         // animate the replacement
+        anime({
+            targets: 'body',
+            opacity: [0, 1]
+        });
         anime({
             easing: 'easeInOutQuad',
             targets: '.section',
             opacity: [0, 1],
             duration: 700,
-            scale: [0.99, 1],
-            complete: function () {
-                console.log("5. finished running anime function");
-                scrollOutCall();
+            scale: [0.99, 1]
+        });
+    }, 700);
+}
+
+function reattachEventListeners(doc) {
+    // add new event listeners
+    let homeLink = doc.querySelector('#home-link');
+    let cignaLink = doc.querySelector('#cigna-link');
+    let fedexLink = doc.querySelector('#fedex-link');
+    let gokadaLink = doc.querySelector('#gokada-link');
+    let siriuslabsLink = doc.querySelector('#siriuslabs-link');
+    let arr = [homeLink, cignaLink, fedexLink, gokadaLink, siriuslabsLink];
+
+    arr.forEach((eachLink) => {
+        eachLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            switch (eachLink) {
+
+                case homeLink:
+                    fetchPage(eachLink, 'index.html');
+                    break;
+
+                case cignaLink:
+                    fetchPage(eachLink, 'cigna.html');
+                    break;
+
+                case fedexLink:
+                    fetchPage(eachLink, 'fedex.html');
+                    break;
+
+                case gokadaLink:
+                    fetchPage(eachLink, 'gokada.html');
+                    break;
+
+                case siriuslabsLink:
+                    fetchPage(eachLink, 'siriuslabs.html');
+                    break;
+
             }
         });
-    }, 6700);
-
-
-    // // add new event listeners
-    // let homeLink = doc.querySelector('#home-link');
-    // let cignaLink = doc.querySelector('#cigna-link');
-    // let fedexLink = doc.querySelector('#fedex-link');
-    // let gokadaLink = doc.querySelector('#gokada-link');
-    // let siriuslabsLink = doc.querySelector('#siriuslabs-link');
-    // let arr = [homeLink, cignaLink, fedexLink, gokadaLink, siriuslabsLink];
-
-    // arr.forEach((eachLink) => {
-    //     eachLink.addEventListener('click', (event) => {
-    //         event.preventDefault();
-    //         switch (eachLink) {
-
-    //             case homeLink:
-    //                 fetchPage(eachLink, 'index.html');
-    //                 break;
-
-    //             case cignaLink:
-    //                 fetchPage(eachLink, 'cigna.html');
-    //                 break;
-
-    //             case fedexLink:
-    //                 fetchPage(eachLink, 'fedex.html');
-    //                 break;
-
-    //             case gokadaLink:
-    //                 fetchPage(eachLink, 'gokada.html');
-    //                 break;
-
-    //             case siriuslabsLink:
-    //                 fetchPage(eachLink, 'siriuslabs.html');
-    //                 break;
-
-    //         }
-    //     });
-    // })
+    })
 }
 
 function fetchPage(link, page) {
@@ -181,6 +153,40 @@ function fetchPage(link, page) {
             console.log('errorrrr ', error)
         })
 }
+
+function removeHomePageContainers(document) {
+    let sections = document.querySelectorAll('.section');
+    for (var i = 0; i < sections.length; i++) {
+        // have to leave the old navigation so that we don't have to reattach event listeners
+        sections[i].remove();
+    }
+}
+
+function scrollOutCall() {
+    ScrollOut({
+        onShown: function (el) {
+            // use the web animation API
+            anime({
+                easing: 'easeInOutQuad',
+                targets: el, // ".cigna.section.section-overview.section-columns",
+                opacity: [0, 1],
+                duration: 1200,
+                scale: [0.99, 1]
+            });
+        },
+        onHidden: function (el) {
+            // hide the element initially
+            anime({
+                easing: 'easeInOutQuad',
+                targets: el, //".cigna.section.section-overview.section-columns",
+                opacity: [1, 0],
+                duration: 1200,
+                scale: [1, 0.99]
+            });
+        },
+    });
+}
+
 
 // ajax page loading fetch animations 
 // https://www.youtube.com/watch?v=G5rGLY5uF7Y
