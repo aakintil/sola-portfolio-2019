@@ -168,14 +168,14 @@ h5 span {
     position: relative;
 }
 
-.projects .section-header {
+.projects.section-header {
     height: 25vh;
     align-items: flex-start;
     position: relative;
     /* justify-content: flex-start; */
 }
 
-.projects .section-link-container {
+.projects.section-link-container {
     position: fixed;
     background: #0F0E0E;
     width: 100%;
@@ -184,12 +184,12 @@ h5 span {
     align-items: center;
 }
 
-.projects .section-header a {
+.projects.section-header a {
     text-decoration: none;
     color: #F9F9F9;
 }
 
-.projects .section-intro h3 {
+.projects.section-intro h3 {
     font-size: 30px;
     font-weight: 500;
     text-transform: capitalize;
