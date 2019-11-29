@@ -1,5 +1,4 @@
 // load new page content via fetch when link is clicked, and animate it
-let homeLink = document.querySelector('#home-link');
 let cignaLink = document.querySelector('#cigna-link');
 let fedexLink = document.querySelector('#fedex-link');
 let gokadaLink = document.querySelector('#gokada-link');
@@ -32,11 +31,11 @@ linkArray.forEach((eachLink) => {
 })
 
 function removeHomePageContainers(document) {
-    let sections = document.querySelectorAll('.section'); 
-    for( var i = 0; i < sections.length; i++ ) {
+    let sections = document.querySelectorAll('.section');
+    for (var i = 0; i < sections.length; i++) {
         // have to leave the old navigation so that we don't have to reattach event listeners
         if (!sections[i].classList.contains('section-projects')) {
-            sections[i].remove(); 
+            sections[i].remove();
         }
     }
 }
@@ -50,14 +49,13 @@ function addProjectPageContainers(document, doc) {
         });
 
         // replace the content with new content
-        let projectSections = doc.querySelectorAll('.section'); 
-        for ( var i = 0; i < projectSections.length; i++ ) {
-            document.querySelector('body').insertBefore(projectSections[i], document.querySelector('.section-projects')); 
+        let projectSections = doc.querySelectorAll('.section');
+        for (var i = 0; i < projectSections.length; i++) {
+            document.querySelector('body').insertBefore(projectSections[i], document.querySelector('.section-projects'));
         }
 
         // animate the replacement
         anime({
-            delay: 1000,
             easing: 'easeInOutQuad',
             targets: '.section',
             opacity: [0, 1],
@@ -73,7 +71,6 @@ function fetchPage(link, page) {
     if (window.location.port) {
         baseURL += `:${window.location.port}`;
     }
-
     fetch(`${baseURL}/${page}`)
         .then((response) => {
             return response.text();
@@ -89,8 +86,19 @@ function fetchPage(link, page) {
                 duration: 700,
                 scale: [1, 0.99],
                 complete: (anim) => {
-                    removeHomePageContainers(document);
-                    addProjectPageContainers(document, doc);
+                    doc.querySelector('#home-link').addEventListener('click', (event) => {
+                        console.log(page)
+                    })
+                    // console.log(doc.querySelector('#home-link'))
+ 
+                    if (page === 'index.html') {
+    
+                    }
+                    else {
+                        console.log("what to do")
+                        removeHomePageContainers(document);
+                        addProjectPageContainers(document, doc);
+                    }
 
                 }
             });

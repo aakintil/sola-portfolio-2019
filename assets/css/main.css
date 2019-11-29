@@ -133,6 +133,7 @@ h5 span {
     margin-bottom: 50px;
 }
 
+#home-link,
 .section-contact-content-link,
 .section-projects-content-link,
 .section-overview-content-link, 
@@ -171,8 +172,8 @@ h5 span {
 .projects.section-header {
     height: 25vh;
     align-items: flex-start;
-    position: relative;
-    /* justify-content: flex-start; */
+    position: fixed; 
+    top: 0; 
 }
 
 .projects.section-link-container {
@@ -187,6 +188,10 @@ h5 span {
 .projects.section-header a {
     text-decoration: none;
     color: #F9F9F9;
+}
+
+.projects.section-intro {
+    margin-top: 35vh; 
 }
 
 .projects.section-intro h3 {
@@ -211,7 +216,6 @@ h5 span {
 }
 
 .section-gallery-row .section-title {
-    /* align-self: flex-start; */
     text-align: center;
 }
 
