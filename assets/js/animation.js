@@ -7,20 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         behavior: 'smooth'
     });
 
-    // ScrollOut();
-
     // initial page load animation
-    console.log("dom loaded");
-
-    // anime({
-    //     easing: 'easeInOutQuad',
-    //     targets: '.section-header h1',
-    //     opacity: [0, 1],
-    //     translateY: [50, 0],
-    //     delay: 1000,
-    //     duration: 1000,
-    //     scale: [0.90, 1]
-    // });
+    console.log("dom loaded ...");
 });
 
 

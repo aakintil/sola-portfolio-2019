@@ -34,9 +34,7 @@ function removeHomePageContainers(document) {
     let sections = document.querySelectorAll('.section');
     for (var i = 0; i < sections.length; i++) {
         // have to leave the old navigation so that we don't have to reattach event listeners
-        if (!sections[i].classList.contains('section-projects')) {
-            sections[i].remove();
-        }
+        sections[i].remove();
     }
 }
 
@@ -51,7 +49,7 @@ function addProjectPageContainers(document, doc) {
         // replace the content with new content
         let projectSections = doc.querySelectorAll('.section');
         for (var i = 0; i < projectSections.length; i++) {
-            document.querySelector('body').insertBefore(projectSections[i], document.querySelector('.section-projects'));
+            document.querySelector('body').appendChild(projectSections[i]);
         }
 
         // animate the replacement
@@ -63,6 +61,45 @@ function addProjectPageContainers(document, doc) {
             scale: [0.99, 1]
         });
     }, 700);
+
+    // attach animation event lisnters
+
+    // add new event listeners
+    let homeLink = doc.querySelector('#home-link');
+    let cignaLink = doc.querySelector('#cigna-link');
+    let fedexLink = doc.querySelector('#fedex-link');
+    let gokadaLink = doc.querySelector('#gokada-link');
+    let siriuslabsLink = doc.querySelector('#siriuslabs-link');
+    let arr = [homeLink, cignaLink, fedexLink, gokadaLink, siriuslabsLink];
+
+    arr.forEach((eachLink) => {
+        eachLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            switch (eachLink) {
+
+                case homeLink:
+                    fetchPage(eachLink, 'index.html');
+                    break;
+
+                case cignaLink:
+                    fetchPage(eachLink, 'cigna.html');
+                    break;
+
+                case fedexLink:
+                    fetchPage(eachLink, 'fedex.html');
+                    break;
+
+                case gokadaLink:
+                    fetchPage(eachLink, 'gokada.html');
+                    break;
+
+                case siriuslabsLink:
+                    fetchPage(eachLink, 'siriuslabs.html');
+                    break;
+
+            }
+        });
+    })
 }
 
 function fetchPage(link, page) {
@@ -86,20 +123,34 @@ function fetchPage(link, page) {
                 duration: 700,
                 scale: [1, 0.99],
                 complete: (anim) => {
-                    doc.querySelector('#home-link').addEventListener('click', (event) => {
-                        console.log(page)
-                    })
-                    // console.log(doc.querySelector('#home-link'))
- 
-                    if (page === 'index.html') {
-    
-                    }
-                    else {
-                        console.log("what to do")
-                        removeHomePageContainers(document);
-                        addProjectPageContainers(document, doc);
-                    }
+                    removeHomePageContainers(document);
+                    addProjectPageContainers(document, doc);
 
+                    ScrollOut({
+                        onShown: function (el) {
+                            // use the web animation API
+                            console.log("inside scroll out ", el)
+                            anime({
+                                threshold: 0.5,
+                                easing: 'easeInOutQuad',
+                                targets: el,
+                                opacity: [0, 1],
+                                duration: 1200,
+                                scale: [0.99, 1]
+                            });
+                        },
+                        onHidden: function (el) {
+                            // hide the element initially
+                            anime({
+                                threshold: 0.5,
+                                easing: 'easeInOutQuad',
+                                targets: el,
+                                opacity: [1, 0],
+                                duration: 1200,
+                                scale: [1, 0.99]
+                            });
+                        },
+                    });
                 }
             });
         })
