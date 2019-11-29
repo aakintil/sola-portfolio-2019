@@ -2,6 +2,7 @@
 // 1. update and organize all this code
 // 2. create a way so that the url changes to reflect the page you're on
 //  https://carlofontanos.com/using-history-js-with-ajax/
+//  https://github.com/browserstate/history.js
 
 // load new page content via fetch when link is clicked, and animate it
 let cignaLink = document.querySelector('#cigna-link');
