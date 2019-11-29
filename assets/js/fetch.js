@@ -1,3 +1,8 @@
+// TODOs
+// 1. update and organize all this code
+// 2. create a way so that the url changes to reflect the page you're on
+//  https://carlofontanos.com/using-history-js-with-ajax/
+
 // load new page content via fetch when link is clicked, and animate it
 let cignaLink = document.querySelector('#cigna-link');
 let fedexLink = document.querySelector('#fedex-link');
