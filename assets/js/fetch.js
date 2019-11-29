@@ -56,11 +56,39 @@ function addProjectPageContainers(document, doc) {
         anime({
             easing: 'easeInOutQuad',
             targets: '.section',
-            opacity: [0, 1],
+            // opacity: [0, 1],
             duration: 700,
             scale: [0.99, 1]
         });
     }, 700);
+
+    let scrollOutItems = document.querySelectorAll('[data-scroll]');
+    let arrs = [...scrollOutItems]; 
+    ScrollOut({
+        onShown: function () {
+            // use the web animation API
+            console.log("visibile ");
+            anime({
+                threshold: 0.9,
+                easing: 'easeInOutQuad',
+                targets: scrollOutItems,
+                opacity: [0, 1],
+                duration: 1200,
+                scale: [0.99, 1]
+            });
+        },
+        onHidden: function () {
+            // hide the element initially
+            anime({
+                threshold: 0.5,
+                easing: 'easeInOutQuad',
+                targets: scrollOutItems,
+                opacity: [1, 0],
+                duration: 1200,
+                scale: [1, 0.99]
+            });
+        },
+    });
 
     // attach animation event lisnters
 
@@ -125,32 +153,6 @@ function fetchPage(link, page) {
                 complete: (anim) => {
                     removeHomePageContainers(document);
                     addProjectPageContainers(document, doc);
-
-                    ScrollOut({
-                        onShown: function (el) {
-                            // use the web animation API
-                            console.log("inside scroll out ", el)
-                            anime({
-                                threshold: 0.5,
-                                easing: 'easeInOutQuad',
-                                targets: el,
-                                opacity: [0, 1],
-                                duration: 1200,
-                                scale: [0.99, 1]
-                            });
-                        },
-                        onHidden: function (el) {
-                            // hide the element initially
-                            anime({
-                                threshold: 0.5,
-                                easing: 'easeInOutQuad',
-                                targets: el,
-                                opacity: [1, 0],
-                                duration: 1200,
-                                scale: [1, 0.99]
-                            });
-                        },
-                    });
                 }
             });
         })
