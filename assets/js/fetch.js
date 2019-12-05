@@ -174,7 +174,7 @@ function scrollOutCall() {
             // use the web animation API
             anime({
                 easing: 'easeInOutQuad',
-                targets: el, // ".cigna.section.section-overview.section-columns",
+                targets: el, 
                 opacity: [0, 1],
                 duration: 1200,
                 scale: [0.99, 1]
@@ -184,7 +184,7 @@ function scrollOutCall() {
             // hide the element initially
             anime({
                 easing: 'easeInOutQuad',
-                targets: el, //".cigna.section.section-overview.section-columns",
+                targets: el, 
                 opacity: [1, 0],
                 duration: 1200,
                 scale: [1, 0.99]

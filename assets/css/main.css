@@ -38,6 +38,7 @@ body {
     background: #0F0E0E;
     color: #F9F9F9;
     font-family: "EuclidSquare";
+    opacity: 0;
 }
 
 /* fonts */
