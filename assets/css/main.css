@@ -96,11 +96,12 @@ h5 span {
 
 .section-title,
 .section-overview-content {
-    line-height: 50px;
+    line-height: 40px;
 }
 
 
-.section-title {
+.section-title, 
+.section-overview-content-learn-more-link {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -113,7 +114,7 @@ h5 span {
 .section-contact-content-link {
     font-size: 20px;
     font-weight: 300;
-    letter-spacing: -0.5px;
+    /* letter-spacing: -0.5px; */
 }
 
 .section-experience-content-detail {
