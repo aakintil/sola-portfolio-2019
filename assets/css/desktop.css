@@ -16,7 +16,7 @@
     .section-columns .section-title {
         line-height: 16px;
         margin-right: 100px;
-        width: 100px;
+        min-width: 100px;
     }
 
     /* project detail pages */
@@ -37,7 +37,11 @@
     }
 
     .section-overview-content:nth-child(1) {
-        margin-top: -15px;
+        margin-top: -10px;
+    }
+
+    .section-projects-content:nth-child(2) {
+        margin-top: -5px; 
     }
 
 }

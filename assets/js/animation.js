@@ -1,10 +1,9 @@
+window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+});
 // as soon as dom is loaded, execute functions
 document.addEventListener('DOMContentLoaded', () => {
-    // need to scroll to the top
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
 
     // initial page load animation
     console.log("dom loaded ...");
