@@ -74,7 +74,6 @@ function addProjectPageContainers(document, doc) {
 
     // after all that is done, animate the body back to visible, and animate the rest of the page
     setTimeout(() => {
-        console.log("4. calling set timeout and animating elements to 1 \n")
         // animate the replacement
         anime({
             targets: 'body',
@@ -87,6 +86,21 @@ function addProjectPageContainers(document, doc) {
             duration: 700,
             scale: [0.99, 1]
         });
+
+        // TODO
+        // lazy load the images somehow 
+        // https://www.youtube.com/watch?v=QHi4fUhiSMI
+        // https://github.com/aFarkas/lazysizes 
+        // https://github.com/malchata/yall.js
+        // https://thinker3197.github.io/progressively/
+        // https://www.youtube.com/watch?reload=9&v=AMteSxT5uGM
+
+        // TODO 
+        // scrolling issue on firefox
+        // https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects
+
+
+
     }, 700);
 }
 
@@ -98,6 +112,15 @@ function reattachEventListeners(doc) {
     let gokadaLink = doc.querySelector('#gokada-link');
     let siriuslabsLink = doc.querySelector('#siriuslabs-link');
     let arr = [homeLink, cignaLink, fedexLink, gokadaLink, siriuslabsLink];
+    let button = doc.querySelector('.scroll-top-button-container');
+
+    button.addEventListener('click', (event) => {
+        // need to scroll to the top
+        window.scrollTo({
+            top: '-100',
+            behavior: 'smooth'
+        });
+    }); 
 
     arr.forEach((eachLink) => {
         eachLink.addEventListener('click', (event) => {
@@ -174,7 +197,7 @@ function scrollOutCall() {
             // use the web animation API
             anime({
                 easing: 'easeInOutQuad',
-                targets: el, 
+                targets: el,
                 opacity: [0, 1],
                 duration: 1200,
                 scale: [0.99, 1]
@@ -184,7 +207,7 @@ function scrollOutCall() {
             // hide the element initially
             anime({
                 easing: 'easeInOutQuad',
-                targets: el, 
+                targets: el,
                 opacity: [1, 0],
                 duration: 1200,
                 scale: [1, 0.99]

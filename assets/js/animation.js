@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // after all that is done, animate the body back to visible, and animate the rest of the page
     setTimeout(() => {
-        console.log("4. calling set timeout and animating elements to 1 \n")
         // animate the replacement
         anime({
             targets: 'body',
