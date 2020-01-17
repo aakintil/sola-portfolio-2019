@@ -112,15 +112,18 @@ function reattachEventListeners(doc) {
     let gokadaLink = doc.querySelector('#gokada-link');
     let siriuslabsLink = doc.querySelector('#siriuslabs-link');
     let arr = [homeLink, cignaLink, fedexLink, gokadaLink, siriuslabsLink];
-    let button = doc.querySelector('.scroll-top-button-container');
+    if ( doc.querySelector('.scroll-top-button-container') ) {
 
-    button.addEventListener('click', (event) => {
-        // need to scroll to the top
-        window.scrollTo({
-            top: '-100',
-            behavior: 'smooth'
-        });
-    }); 
+        let button = doc.querySelector('.scroll-top-button-container');
+
+        button.addEventListener('click', (event) => {
+            // need to scroll to the top
+            window.scrollTo({
+                top: '-100',
+                behavior: 'smooth'
+            });
+        }); 
+    }
 
     arr.forEach((eachLink) => {
         eachLink.addEventListener('click', (event) => {
