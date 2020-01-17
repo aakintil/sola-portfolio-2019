@@ -196,6 +196,7 @@ function removeHomePageContainers(document) {
 
 function scrollOutCall() {
     ScrollOut({
+        once: true,
         onShown: function (el) {
             // use the web animation API
             anime({

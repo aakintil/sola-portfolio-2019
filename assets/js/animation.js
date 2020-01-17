@@ -17,10 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         ScrollOut({
+            once: true,
             onShown: function (el) {
                 // use the web animation API
                 anime({
-                    threshold: 0.5,
                     easing: 'easeInOutQuad',
                     targets: el,
                     opacity: [0, 1],
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
             onHidden: function (el) {
                 // hide the element initially
                 anime({
-                    threshold: 0.5,
                     easing: 'easeInOutQuad',
                     targets: el,
                     opacity: [1, 0],
