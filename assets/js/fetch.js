@@ -73,13 +73,13 @@ function addProjectPageContainers(document, doc) {
             targets: 'body, .section-header',
             opacity: [0, 1],
             scale: [0.99, 1],
-            duration: 1250
+            duration: 750
         }).finished.then(() => {
             ScrollOut();
             reattachEventListeners(document)
         });
 
-    }, 500);
+    }, 100);
 
 }
 
