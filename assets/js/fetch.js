@@ -8,9 +8,10 @@
 let cignaLink = document.querySelector('#cigna-link');
 let fedexLink = document.querySelector('#fedex-link');
 let gokadaLink = document.querySelector('#gokada-link');
+let nikeLink = document.querySelector('#nike-link');
 let siriuslabsLink = document.querySelector('#siriuslabs-link');
 
-let linkArray = [cignaLink, fedexLink, gokadaLink, siriuslabsLink];
+let linkArray = [cignaLink, fedexLink, gokadaLink, nikeLink, siriuslabsLink];
 
 linkArray.forEach((eachLink) => {
     eachLink.addEventListener('click', (event) => {
@@ -26,6 +27,10 @@ linkArray.forEach((eachLink) => {
 
             case gokadaLink:
                 fetchPage(eachLink, 'gokada.html');
+                break;
+
+            case nikeLink:
+                fetchPage(eachLink, 'nike.html');
                 break;
 
             case siriuslabsLink:
@@ -110,9 +115,10 @@ function reattachEventListeners(doc) {
     let cignaLink = doc.querySelector('#cigna-link');
     let fedexLink = doc.querySelector('#fedex-link');
     let gokadaLink = doc.querySelector('#gokada-link');
+    let nikeLink = doc.querySelector('#nike-link');
     let siriuslabsLink = doc.querySelector('#siriuslabs-link');
-    let arr = [homeLink, cignaLink, fedexLink, gokadaLink, siriuslabsLink];
-    if ( doc.querySelector('.scroll-top-button-container') ) {
+    let arr = [homeLink, cignaLink, fedexLink, gokadaLink, nikeLink, siriuslabsLink];
+    if (doc.querySelector('.scroll-top-button-container')) {
 
         let button = doc.querySelector('.scroll-top-button-container');
 
@@ -122,7 +128,7 @@ function reattachEventListeners(doc) {
                 top: '-100',
                 behavior: 'smooth'
             });
-        }); 
+        });
     }
 
     arr.forEach((eachLink) => {
@@ -144,6 +150,10 @@ function reattachEventListeners(doc) {
 
                 case gokadaLink:
                     fetchPage(eachLink, 'gokada.html');
+                    break;
+
+                case nikeLink:
+                    fetchPage(eachLink, 'nike.html');
                     break;
 
                 case siriuslabsLink:
