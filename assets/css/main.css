@@ -38,7 +38,7 @@ body {
     background: #0F0E0E;
     color: #F9F9F9;
     font-family: "EuclidSquare";
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 /* fonts */
@@ -84,6 +84,7 @@ h5 span {
     height: 100vh;
     justify-content: center;
     align-items: center;
+    opacity: 0; 
 }
 
 .section-overview-content {
@@ -243,3 +244,14 @@ h5 span {
 .scroll-top-button:hover {
     cursor: pointer;
 }
+
+[data-scroll] {
+    transition: opacity 1.75s;
+  }
+  [data-scroll="in"] {
+    opacity: 1;
+  }
+  [data-scroll="out"] {
+    opacity: 0;
+  }
+  

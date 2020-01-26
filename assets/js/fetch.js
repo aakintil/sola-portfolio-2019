@@ -48,65 +48,39 @@ function addProjectPageContainers(document, doc) {
         behavior: 'smooth'
     });
 
-    // hide the body so users don't see lag and what not
-    anime({
-        targets: 'body',
-        opacity: [1, 0]
-    })
-
-
-    // replace the content with new content
-    // attaching elements to the dom
-    let projectSections = doc.querySelectorAll('.section');
-    for (var i = 0; i < projectSections.length; i++) {
-        document.querySelector('body').appendChild(projectSections[i]);
-    }
-
-    // animate the new content from opaque to invisible
-    anime({
-        easing: 'easeInOutQuad',
-        targets: '.section',
-        opacity: [1, 0],
-        duration: 0,
-        scale: [1, 0.99]
-    });
-
-    // attach scrollout events to the new content
-    scrollOutCall();
-
-    // attach event listeners to the new content project navigation
-    reattachEventListeners(document);
-
-    // after all that is done, animate the body back to visible, and animate the rest of the page
     setTimeout(() => {
-        // animate the replacement
+        // hide the body so users don't see lag and what not
         anime({
             targets: 'body',
-            opacity: [0, 1]
-        });
+            opacity: [1, 0],
+            duration: 0
+        })
+
+        // replace the content with new content
+        // attaching elements to the dom
+        let projectSections = doc.querySelectorAll('.section');
+        for (var i = 0; i < projectSections.length; i++) {
+            document.querySelector('body').appendChild(projectSections[i]);
+        }
+
+    }, 100);
+
+    setTimeout(() => {
+        // attaching elements to the dom
+        // attach event listeners to the new content project navigation
         anime({
             easing: 'easeInOutQuad',
-            targets: '.section',
+            targets: 'body, .section-header',
             opacity: [0, 1],
-            duration: 700,
-            scale: [0.99, 1]
+            scale: [0.99, 1],
+            duration: 1250
+        }).finished.then(() => {
+            ScrollOut();
+            reattachEventListeners(document)
         });
 
-        // TODO
-        // lazy load the images somehow 
-        // https://www.youtube.com/watch?v=QHi4fUhiSMI
-        // https://github.com/aFarkas/lazysizes 
-        // https://github.com/malchata/yall.js
-        // https://thinker3197.github.io/progressively/
-        // https://www.youtube.com/watch?reload=9&v=AMteSxT5uGM
+    }, 500);
 
-        // TODO 
-        // scrolling issue on firefox
-        // https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects
-
-
-
-    }, 700);
 }
 
 function reattachEventListeners(doc) {
@@ -177,19 +151,21 @@ function fetchPage(link, page) {
         })
         .then((html) => {
             let doc = new DOMParser().parseFromString(html, 'text/html');
-
             // animate as soon as we call this function 
             anime({
                 easing: 'easeInOutQuad',
-                targets: '.section',
-                opacity: 0,
-                duration: 700,
+                targets: 'body',
                 scale: [1, 0.99],
-                complete: (anim) => {
+                opacity: [1, 0],
+                duration: 750,
+            }).finished.then(() => {
+                setTimeout(() => {
                     removeHomePageContainers(document);
+                }, 1000);
+                setTimeout(() => {
                     addProjectPageContainers(document, doc);
-                }
-            });
+                }, 1250);
+            })
         })
         .catch(error => {
             console.log('errorrrr ', error)
@@ -204,23 +180,21 @@ function removeHomePageContainers(document) {
     }
 }
 
-function scrollOutCall() {
-    ScrollOut({
-        once: true,
-        onShown: function (el) {
-            // use the web animation API
-            anime({
-                easing: 'easeInOutQuad',
-                threshold: 0.25,
-                targets: el,
-                opacity: [0, 1],
-                duration: 1200,
-                scale: [0.99, 1]
-            });
-        },
-    });
-}
-
 
 // ajax page loading fetch animations 
 // https://www.youtube.com/watch?v=G5rGLY5uF7Y
+
+
+
+
+// TODO
+// lazy load the images somehow 
+// https://www.youtube.com/watch?v=QHi4fUhiSMI
+// https://github.com/aFarkas/lazysizes 
+// https://github.com/malchata/yall.js
+// https://thinker3197.github.io/progressively/
+// https://www.youtube.com/watch?reload=9&v=AMteSxT5uGM
+
+// TODO 
+// scrolling issue on firefox
+// https://developer.mozilla.org/en-US/docs/Mozilla/Performance/Scroll-linked_effects
