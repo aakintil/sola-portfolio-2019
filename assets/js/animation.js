@@ -7,28 +7,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // initial page load animation
     console.log("dom loaded ...");
-
-    // after all that is done, animate the body back to visible, and animate the rest of the page
+    
+    ScrollOut();
     setTimeout(() => {
         // animate the replacement
         anime({
-            targets: 'body',
-            opacity: [0, 1]
-        });
-
-        ScrollOut({
-            once: true,
-            onShown: function (el) {
-                // use the web animation API
-                anime({
-                    threshold: 0.25,
-                    easing: 'easeInOutQuad',
-                    targets: el,
-                    opacity: [0, 1],
-                    duration: 1200,
-                    scale: [0.99, 1]
-                });
-            },
+            targets: '.section-header',
+            opacity: [0, 1], 
+            duration: 750
         });
     }, 1000);
 });
