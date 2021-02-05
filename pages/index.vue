@@ -12,20 +12,20 @@
         <h5>
           My site is currently under-construction, but reach out if you would like to work together. 
         </h5>
-        <a href="/" class="btn btn-primary">
+        <a href="mailto:aderinsola.akintilo@gmail.com?subject=Let's Chat! – aderinsola.co" target="_blank" class="btn btn-primary">
         Contact Me
         </a>
       </section>
       <footer class="xyz-in">
         <div class="row">
-          <a href="/" class="footer-links">Portfolio</a>
-          <a href="/" class="footer-links">Resume</a>
-          <a href="/" class="footer-links">LinkedIn</a>
+          <a href="https://drive.google.com/file/d/1bv8yTFtZl-pJIa_DKh99bAVbC_TNbq1D/view?usp=sharing" target="_blank" class="footer-links">Portfolio</a>
+          <a href="https://drive.google.com/file/d/1VePb7GpRjXpibKDbhZX6MVyMYYwTYjeF/view?usp=sharing" target="_blank" class="footer-links center">Resume</a>
+          <a href="https://www.linkedin.com/in/aderinsola/" target="_blank" class="footer-links right">LinkedIn</a>
         </div>
         <div class="row">
-          <a href="/" class="footer-links">Dribbble</a>
-          <a href="/" class="footer-links">Blog</a>
-          <a href="/" class="footer-links">Email</a>
+          <a href="https://dribbble.com/Aderinsola" target="_blank" class="footer-links">Dribbble</a>
+          <a href="https://medium.com/@__Aderinsola__" target="_blank" class="footer-links center">Blog</a>
+          <a href="mailto:aderinsola.akintilo@gmail.com?subject=We Have Questions! – aderinsola.co" target="_blank" class="footer-links right">Email</a>
         </div>
 
       </footer>

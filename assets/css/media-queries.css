@@ -1,25 +1,62 @@
 /* MEDIA QUERIES.CSS */
+
+@media (min-width: 412px) {
+
+  body {
+    padding: 56px;
+  }
+
+  #__layout  > div {
+    justify-content: flex-start;
+  }
+  .container {
+    max-width: 440px;
+  }
+
+  h5 {
+    max-width: 360px;
+  }
+
+  h1 {
+    line-height: 48px;
+    font-size: 40px;
+  }
+}
+
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-    
-  }
   
-  @media (min-width: 772px) {
+}
 
+@media (min-width: 772px) {
+  body {
+    padding: 88px;
   }
-  
-  @media (min-width: 992px) {
-  }
-  
-  @media (min-width: 1200px) {
-  }
-  
-  /* // Extra large devices (large desktops, 1200px and up) */
-  @media (min-width: 1400px) {
 
+  .container {
+    max-width: none;
   }
-  
-  @media (min-width: 1660px) {
 
+  .footer-links.center {
+    text-align: center;
   }
+  .footer-links.right {
+    text-align: right;
+  }
+}
+
+@media (min-width: 992px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1400px) {
+
+}
+
+@media (min-width: 1660px) {
+
+}
   
