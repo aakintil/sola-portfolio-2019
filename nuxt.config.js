@@ -17,7 +17,8 @@ export default {
       {
         hid: "ogsitename",
         property: "og:site_name",
-        content: "Portfolio of Aderinsola Akintilo",
+        content:
+          "Aderinsola Akintilo is a Product Designer & Product Manager based in Lagos, Nigeria. He designs and manages software solutions in the healthcare and transportation sectors.",
       },
     ],
     link: [
